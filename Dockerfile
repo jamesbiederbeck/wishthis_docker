@@ -64,11 +64,11 @@ RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 USER www-data
 
 # GET WISHTHIS
-## Git clone wishthis/wishthis (default: stable branch)
+## Git clone jamesbiederbeck/wishthis (default: stable branch)
 ARG WISHTHIS_GITBRANCH=stable
 ENV WISHTHIS_GITBRANCH $WISHTHIS_GITBRANCH
 RUN git --version && echo '...Cloning $WISHTHIS_GITBRANCH branch...'
-RUN git clone -b $WISHTHIS_GITBRANCH https://github.com/wishthis/wishthis.git .
+RUN git clone -b $WISHTHIS_GITBRANCH https://github.com/jamesbiederbeck/wishthis.git .
 
 # Mount volume (config file)
 VOLUME $WISHTHIS_CONFIG
